@@ -7,7 +7,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    environment:
+    environment: # environment variables are prioritized over .env file i.e., if both of them have same variables, the environment variables will be used
       DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/app
   db:
     image: postgres:16
